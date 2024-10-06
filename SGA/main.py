@@ -6,7 +6,7 @@ janela = Tk()
 janela.title("Sistema de gerenciamento de alunos")
 janela.config(bg="#99d8ea")
 janela.resizable(False, False)
-img = PhotoImage(file=r"C:\Users\KevCe\PycharmProjects\PyhtonProject\SGA\icon\icon1.png")
+img = PhotoImage(file=r"SGA\icon\icon1.png")
 janela.iconphoto(False, img)
 janela.pack_propagate(False)
 
@@ -22,7 +22,7 @@ y = (y_tela / 2) - (y_app / 2)
 janela.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
 
 #widget
-logo_img = ImageTk.PhotoImage(file=r"C:\Users\KevCe\PycharmProjects\PyhtonProject\SGA\icon\icon2.png")
+logo_img = ImageTk.PhotoImage(file=r"SGA\icon\icon2.png")
 logo_widget = tkinter.Label(janela, image=logo_img, bg="#99d8ea")
 logo_widget.image = logo_img
 logo_widget.pack()
