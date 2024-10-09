@@ -22,7 +22,11 @@ y = (y_tela / 2) - (y_app / 2)
 janela.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
 
 #widget
+<<<<<<< HEAD
 logo_img = ImageTk.PhotoImage(file=r"SGA/icon/icon2.png")
+=======
+logo_img = ImageTk.PhotoImage(file=r"SGA\icon\icon2.png")
+>>>>>>> 610c36950c0c0888098bc13099b7546e06c9ddbb
 logo_widget = tkinter.Label(janela, image=logo_img, bg="#99d8ea")
 logo_widget.image = logo_img
 logo_widget.pack()
@@ -45,4 +49,8 @@ b_2 = Button(janela,
              relief=FLAT)
 b_2.place(x=100, y=300)
 
+<<<<<<< HEAD
 janela.mainloop()
+=======
+janela.mainloop()
+>>>>>>> 610c36950c0c0888098bc13099b7546e06c9ddbb
