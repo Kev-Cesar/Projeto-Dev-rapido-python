@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 
 start_window = ttk.Window(themename = 'superhero')
 start_window.title("Sistema de gerenciamento de alunos")
-img = ImageTk.PhotoImage(file=r"SGA\icon\icon1.png")
+img = ImageTk.PhotoImage(file=r"SGA\icon\icon.png")
 start_window.iconphoto(False, img)
 
 #GRID LAYOUT
@@ -25,7 +25,7 @@ y = (y_screen / 2) - (y_app / 2)
 start_window.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
 
 #LOGO
-logo = Image.open('SGA/icon/icon2.png')
+logo = Image.open('SGA/icon/logo.png')
 logo_img = ImageTk.PhotoImage(logo)
 logo_place = tk.Label(start_window, image=logo_img)
 logo_place.image = logo_img
@@ -33,12 +33,10 @@ logo_place.grid(column=0)
 
 #BUTTONS
 button_frame = ttk.Frame(start_window)
-
 b1 = ttk.Button(button_frame, text= 'Consultar alunos', width= 30)
 b1.pack(pady= 10)
 b2 = ttk.Button(button_frame, text= 'Alterar informações', width= 30)
 b2.pack(pady= 10)
-
 button_frame.grid(column= 1, row=0, sticky= 'ew')
 
 start_window.mainloop()
