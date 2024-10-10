@@ -1,50 +1,44 @@
-import tkinter
-from tkinter import *
-from PIL import ImageTk
-
+import tkinter as tk
+from tkinter import ttk
+import ttkbootstrap as ttk
+from PIL import ImageTk, Image
 #INSTALR PILLOW USANDO "PIP INSTALL PILLOW"
 
-janela = Tk()
-janela.title("Sistema de gerenciamento de alunos")
-janela.config(bg="#99d8ea")
-janela.resizable(False, False)
-img = PhotoImage(file=r"SGA\icon\icon1.png")
-janela.iconphoto(False, img)
-janela.pack_propagate(False)
+start_window = ttk.Window(themename = 'superhero')
+start_window.title("Sistema de gerenciamento de alunos")
+img = ImageTk.PhotoImage(file=r"SGA\icon\icon1.png")
+start_window.iconphoto(False, img)
 
-#centralizar app
-x_app = 400
-y_app = 450
-x_tela = janela.winfo_screenwidth()
-y_tela = janela.winfo_screenheight()
+#GRID LAYOUT
+start_window.columnconfigure((0,1),  weight= 1, uniform= 'a')
+start_window.rowconfigure((0), weight= 1)
 
-x = (x_tela / 2) - (x_app / 2)
-y = (y_tela / 2) - (y_app / 2)
+#CENTRALIZE APP ON THE SCREEN
+x_app = 550
+y_app = 350
+x_screen = start_window.winfo_screenwidth()
+y_screen = start_window.winfo_screenheight()
 
-janela.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
+x = (x_screen / 2) - (x_app / 2)
+y = (y_screen / 2) - (y_app / 2)
 
-#widget
-logo_img = ImageTk.PhotoImage(file=r"SGA/icon/icon2.png")
-logo_widget = tkinter.Label(janela, image=logo_img, bg="#99d8ea")
-logo_widget.image = logo_img
-logo_widget.pack()
+start_window.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
 
-#botões
-b_1 = Button(janela,
-             text="Consultar alunos",
-             cursor="hand2",
-             width=20,
-             height=2,
-             font='Ivy 13 bold',
-             relief=FLAT)
-b_1.place(x=100, y=220)
-b_2 = Button(janela,
-             text="Alterar inormações",
-             cursor="hand2",
-             width=20,
-             height=2,
-             font='Ivy 13 bold',
-             relief=FLAT)
-b_2.place(x=100, y=300)
+#LOGO
+logo = Image.open('SGA/icon/icon2.png')
+logo_img = ImageTk.PhotoImage(logo)
+logo_place = tk.Label(start_window, image=logo_img)
+logo_place.image = logo_img
+logo_place.grid(column=0)
 
-janela.mainloop()
+#BUTTONS
+button_frame = ttk.Frame(start_window)
+
+b1 = ttk.Button(button_frame, text= 'Consultar alunos', width= 30)
+b1.pack(pady= 10)
+b2 = ttk.Button(button_frame, text= 'Alterar informações', width= 30)
+b2.pack(pady= 10)
+
+button_frame.grid(column= 1, row=0, sticky= 'ew')
+
+start_window.mainloop()
