@@ -9,7 +9,7 @@ main_window.title("Sistema de gerenciamento de alunos")
 img = ImageTk.PhotoImage(file=r"SGA\icon\icon.png")
 main_window.iconphoto(False, img)
 
-#PUT THE ENTIRE START SECTION INTO A SINGLE FRAME TO SWITCH BETWEEN WINDOWS ESIER
+#COLOCA A PRIMEIRA TELA INTEIRA EM UM UNICO FRAME PARA FACILICAR A MUDANDA DE "JANELA" POSTERIORMENTE
 start = ttk.Frame(main_window)
 
 #GRID
