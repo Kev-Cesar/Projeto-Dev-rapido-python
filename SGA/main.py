@@ -33,7 +33,7 @@ def load_start():
     b2.pack(pady= 10)
     button_frame.grid(column= 1, row=0, sticky= 'ew')
 
-    start.place(anchor='c', relx=.5, rely=.5)
+    start.place(anchor='center', relx=.5, rely=.5)
 
 def load_consult():
 	
@@ -54,7 +54,6 @@ main_window = ttk.Window(themename = 'superhero')
 main_window.title("Sistema de gerenciamento de alunos")
 img = ImageTk.PhotoImage(file=r"SGA\icon\icon.png")
 main_window.iconphoto(False, img)
-
 #CENTRALIZAR APP NA TELA
 x_app = 550
 y_app = 350
@@ -65,7 +64,7 @@ y = (y_screen / 2) - (y_app / 2)
 main_window.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
 
 #COLOCA A PRIMEIRA TELA INTEIRA EM UM UNICO FRAME PARA FACILICAR A MUDANDA DE "JANELA" POSTERIORMENTE
-start = ttk.Frame(main_window, width=350, height=550)
+start = ttk.Frame(main_window)
 consult = ttk.Frame(main_window)
 
 for main_frame in (start, consult):   #COMPACTA OS FRAMES EM UMA UNICA VARIAVEL PARA FACILITAR A LIMPEZA USANDO A FUNÇÃO clear_widgets
