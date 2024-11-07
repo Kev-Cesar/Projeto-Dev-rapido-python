@@ -140,14 +140,13 @@ def excluir_aluno():
     # Limpar o campo ID após a exclusão
     entry_id.delete(0, tk.END)
 
-# Configuração da interface gráfica com ttkbootstrap
-style = Style(theme="superhero")  # Aplica o tema "solar" do ttkbootstrap
-
+style = Style(theme="superhero")  # Aplica o tema "superhero" do ttkbootstrap
 root = style.master
 root.title("Sistema de Gerenciamento de Alunos")
-img = ImageTk.PhotoImage(file=r"icon\icon.png")
+img = ImageTk.PhotoImage(file=r"icon\icon.png") #Adiciona um icone no topo da janela
 root.iconphoto(False, img)
 
+#Centralizar a janela no centro do display
 x_app = 525
 y_app = 515
 x_screen = root.winfo_screenwidth()
@@ -156,6 +155,7 @@ x = (x_screen / 2) - (x_app / 2)
 y = (y_screen / 2) - (y_app / 2)
 root.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
 
+#Adiciona uma logo na aplicação
 logo = Image.open('icon/logo.png')
 logo_img = ImageTk.PhotoImage(logo)
 logo_place = tk.Label(root, image=logo_img)
@@ -207,5 +207,5 @@ botao_excluir.grid(row=5, column=2, padx=10, pady=5)
 listbox = tk.Listbox(root, width=80, height=10)
 listbox.grid(row=7, column=0, columnspan=3, padx=10, pady=5)
 
-# Iniciar o loop da interface gráfica
+# Iniciar o loop da aplicação
 root.mainloop()
