@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 
 # Função para conectar ao banco de dados
 def conectar_banco():
-    return sqlite3.connect('database/notas_alunos.db')
+    return sqlite3.connect('database/dados_alunos.db')
 
 # Função para criar a tabela no banco de dados
 def criar_tabela():
