@@ -154,6 +154,7 @@ y_screen = root.winfo_screenheight()
 x = (x_screen / 2) - (x_app / 2)
 y = (y_screen / 2) - (y_app / 2)
 root.geometry(f"{x_app}x{y_app}+{int(x)}+{int(y)}")
+root.resizable(False, False)
 
 #Adiciona uma logo na aplicação
 logo = Image.open('icon/logo.png')
